@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bul5ydu6vuhyo"]
+
+[ext_resource type="Script" uid="uid://djkc4rldmvamo" path="res://intro_historia.gd" id="1_4ph66"]
+[ext_resource type="Texture2D" uid="uid://ng7r0smx1lwi" path="res://assets/Adornos/cinematica1.jpg" id="2_orufb"]
+[ext_resource type="Texture2D" uid="uid://choqsde5k0um" path="res://assets/Adornos/cienamita2.jpg" id="3_r1wie"]
+[ext_resource type="FontFile" uid="uid://cpugxlkbaq552" path="res://assets/Fuentes/ka1.ttf" id="4_2iuxp"]
+
+[node name="IntroHistoria" type="Control" unique_id=762625397]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4ph66")
+ilustraciones = Array[Texture2D]([ExtResource("2_orufb"), ExtResource("3_r1wie")])
+
+[node name="FondoIlustracion" type="TextureRect" parent="." unique_id=2135562701]
+layout_mode = 0
+offset_right = 1278.0
+offset_bottom = 719.0
+texture = ExtResource("2_orufb")
+expand_mode = 1
+
+[node name="CapaOscura" type="ColorRect" parent="." unique_id=1720065769]
+layout_mode = 0
+offset_right = 1278.0
+offset_bottom = 721.0
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="ContenedorTexto" type="MarginContainer" parent="." unique_id=1522086741]
+layout_mode = 0
+offset_right = 1279.0
+offset_bottom = 719.0
+theme_override_constants/margin_left = 250
+theme_override_constants/margin_right = 250
+theme_override_constants/margin_bottom = 80
+accessibility_region = true
+
+[node name="TextoHistoria" type="Label" parent="ContenedorTexto" unique_id=1280951622]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_2iuxp")
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BotonSaltar" type="Button" parent="." unique_id=996925715]
+layout_mode = 0
+offset_left = 502.0
+offset_top = 602.0
+offset_right = 695.0
+offset_bottom = 661.0
+text = "Saltar Intro"
+
+[connection signal="pressed" from="BotonSaltar" to="." method="_on_boton_saltar_pressed"]

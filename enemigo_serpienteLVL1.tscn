@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cajhspqtuu7jq"]
+
+[ext_resource type="PackedScene" uid="uid://euovoir7lton" path="res://Enemigo.tscn" id="1_b40h4"]
+[ext_resource type="Texture2D" uid="uid://cjm7x70l61tfp" path="res://assets/SpritesEnemigos/worm.png" id="2_b40h4"]
+[ext_resource type="Texture2D" uid="uid://ekytladb27hn" path="res://assets/SpritesEnemigos/worm_walk.png" id="3_lttne"]
+[ext_resource type="Texture2D" uid="uid://xcpobcqxsy3f" path="res://assets/SpritesEnemigos/snake_hit.png" id="4_bmoor"]
+[ext_resource type="Texture2D" uid="uid://da3keiwjidy23" path="res://assets/SpritesEnemigos/worm_dead.png" id="5_ae7du"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b40h4"]
+size = Vector2(60, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_usilb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b40h4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lttne")
+}],
+"loop": 1,
+"name": &"caminar",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bmoor")
+}],
+"loop": 0,
+"name": &"dano",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ae7du")
+}],
+"loop": 0,
+"name": &"muerte",
+"speed": 5.0
+}]
+
+[node name="Enemigo" unique_id=8942463 instance=ExtResource("1_b40h4")]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1519160712]
+shape = SubResource("RectangleShape2D_b40h4")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=209517869]
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_usilb")
+animation = &"dano"
+autoplay = "caminar"

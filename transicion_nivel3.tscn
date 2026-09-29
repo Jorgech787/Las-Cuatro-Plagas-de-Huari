@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d0a81l2ewwv37"]
+
+[ext_resource type="PackedScene" uid="uid://cyank4ef45wq1" path="res://TransicionNivel.tscn" id="1_cq7bu"]
+[ext_resource type="Texture2D" uid="uid://duk1f8iww2fuu" path="res://assets/Adornos/Jefe3.jpg" id="2_7rjac"]
+
+[node name="TransicionNivel" unique_id=1729186917 instance=ExtResource("1_cq7bu")]
+texto_titulo = "NIVEL 3"
+escena_destino = "res://Nivel3.tscn"
+
+[node name="FotoJefe" parent="." index="0" unique_id=1346910383]
+texture = ExtResource("2_7rjac")
+flip_h = true
+
+[node name="MensajeJefe" parent="ContenedorTextos" parent_id_path=PackedInt32Array(117732215) index="0" unique_id=1843568736]
+theme_override_font_sizes/font_size = 29
+text = "¡Imprudente! ¡Creíste poder detener las Sagradas Plagas? ¡Aquí termina tu viaje!"
+autowrap_mode = 2
+
+[node name="TituloNivel" parent="ContenedorTextos" parent_id_path=PackedInt32Array(117732215) index="1" unique_id=512441056]
+text = "NIVEL 3"

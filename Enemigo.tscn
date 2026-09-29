@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://euovoir7lton"]
+
+[ext_resource type="Script" uid="uid://dsdg6nwvxugg4" path="res://enemigo.gd" id="1_p2sjk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wp5od"]
+radius = 12.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_60w4d"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"caminar",
+"speed": 5.0
+}]
+
+[node name="Enemigo" type="CharacterBody2D" unique_id=8942463]
+script = ExtResource("1_p2sjk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1519160712]
+shape = SubResource("CircleShape2D_wp5od")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=209517869]
+sprite_frames = SubResource("SpriteFrames_60w4d")
+animation = &"caminar"

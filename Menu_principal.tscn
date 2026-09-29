@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://demrgakd6o74p"]
+
+[ext_resource type="Script" uid="uid://b3d8ux78noec8" path="res://menu_principal.gd" id="1_52w07"]
+[ext_resource type="Texture2D" uid="uid://d14rh2dw2swjd" path="res://assets/Adornos/fondomenu.png" id="2_40ble"]
+[ext_resource type="Texture2D" uid="uid://cf00plule8if0" path="res://assets/Adornos/TITULO-removebg-preview.png" id="3_40ble"]
+[ext_resource type="FontFile" uid="uid://bdhv28y6usi40" path="res://assets/Fuentes/orange juice 2.0.ttf" id="3_pqyie"]
+[ext_resource type="Texture2D" uid="uid://b0ejwe884mtfu" path="res://assets/Adornos/boton-removebg-preview.png" id="4_5k5fk"]
+[ext_resource type="FontFile" uid="uid://x1py43qtob0h" path="res://assets/Fuentes/KarmaFuture.ttf" id="4_wdymf"]
+[ext_resource type="PackedScene" uid="uid://sjal3qyjq7m5" path="res://PanelOpciones.tscn" id="7_pqyie"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5k5fk"]
+texture = ExtResource("4_5k5fk")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_left = 90.0
+expand_margin_top = 25.0
+expand_margin_right = 90.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ucc2a"]
+texture = ExtResource("4_5k5fk")
+expand_margin_left = 90.0
+expand_margin_top = 25.0
+expand_margin_right = 90.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wdymf"]
+texture = ExtResource("4_5k5fk")
+expand_margin_left = 90.0
+expand_margin_top = 25.0
+expand_margin_right = 90.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pqyie"]
+texture = ExtResource("4_5k5fk")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_left = 90.0
+expand_margin_top = 25.0
+expand_margin_right = 90.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nnrgo"]
+texture = ExtResource("4_5k5fk")
+expand_margin_left = 90.0
+expand_margin_top = 25.0
+expand_margin_right = 90.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j2vf4"]
+texture = ExtResource("4_5k5fk")
+expand_margin_left = 90.0
+expand_margin_top = 25.0
+expand_margin_right = 90.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lrh5u"]
+texture = ExtResource("4_5k5fk")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_left = 90.0
+expand_margin_top = 25.0
+expand_margin_right = 90.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ryisr"]
+texture = ExtResource("4_5k5fk")
+expand_margin_left = 90.0
+expand_margin_top = 25.0
+expand_margin_right = 90.0
+expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aapwk"]
+texture = ExtResource("4_5k5fk")
+expand_margin_left = 90.0
+expand_margin_top = 25.0
+expand_margin_right = 90.0
+expand_margin_bottom = 25.0
+
+[node name="MenuPrincipal" type="Control" unique_id=1769134835]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_52w07")
+
+[node name="TextureRectFondo" type="TextureRect" parent="." unique_id=1885048272]
+layout_mode = 0
+offset_right = 1282.0
+offset_bottom = 718.0
+texture = ExtResource("2_40ble")
+
+[node name="LabelTitulo" type="Label" parent="TextureRectFondo" unique_id=1881235980]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 122.0
+offset_right = 1035.0
+offset_bottom = 176.0
+theme_override_colors/font_color = Color(1, 1, 0.09803922, 1)
+theme_override_fonts/font = ExtResource("3_pqyie")
+theme_override_font_sizes/font_size = 53
+text = "Y LAS 4 PLAGAS DEL INFRAMUNDO"
+
+[node name="TextureRectTitulo" type="TextureRect" parent="TextureRectFondo" unique_id=1730356217]
+layout_mode = 0
+offset_left = 25.0
+offset_top = -27.0
+offset_right = 484.0
+offset_bottom = 158.0
+texture = ExtResource("3_40ble")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1908586671]
+custom_minimum_size = Vector2(220, 150)
+layout_mode = 0
+offset_left = 850.0
+offset_top = 326.0
+offset_right = 1145.0
+offset_bottom = 525.0
+theme_override_constants/separation = 15
+
+[node name="BotonNuevoJuego" type="Button" parent="VBoxContainer" unique_id=540195385]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_wdymf")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_5k5fk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ucc2a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wdymf")
+text = "Nueva Partida"
+
+[node name="BotonOpciones" type="Button" parent="VBoxContainer" unique_id=522933710]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_wdymf")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_pqyie")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nnrgo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j2vf4")
+text = "Opciones"
+
+[node name="BotonSalir" type="Button" parent="VBoxContainer" unique_id=1784853052]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_wdymf")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_lrh5u")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ryisr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_aapwk")
+text = "Salir"
+
+[node name="PanelOpciones" parent="." unique_id=1808645189 instance=ExtResource("7_pqyie")]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 269.0
+offset_right = 753.0
+offset_bottom = 635.0
+
+[connection signal="pressed" from="VBoxContainer/BotonNuevoJuego" to="." method="_on_boton_nuevo_juego_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonOpciones" to="." method="_on_boton_opciones_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonSalir" to="." method="_on_boton_salir_pressed"]

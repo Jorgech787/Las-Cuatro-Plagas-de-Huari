@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://d2xdf1nh064rf"]
+
+[ext_resource type="Script" uid="uid://cwkvhadkvi6pq" path="res://mejoras_diosa.gd" id="1_wlwvp"]
+[ext_resource type="Texture2D" uid="uid://c7eni6p8wajty" path="res://assets/Adornos/ÑustaPixel.jpg" id="2_kqs66"]
+[ext_resource type="Texture2D" uid="uid://cygma6v2srchv" path="res://assets/Adornos/disparoTriple.png" id="2_vtrwp"]
+[ext_resource type="Texture2D" uid="uid://cfgfhcpx0cg0r" path="res://assets/Adornos/tarjeta.png" id="3_5vey3"]
+[ext_resource type="FontFile" uid="uid://cpugxlkbaq552" path="res://assets/Fuentes/ka1.ttf" id="3_pg246"]
+[ext_resource type="Texture2D" uid="uid://dh874rosjwqq6" path="res://assets/Adornos/danio.png" id="4_vhke6"]
+[ext_resource type="Texture2D" uid="uid://fjnm1gtnyuv" path="res://assets/Adornos/corazon.png" id="5_l2qcu"]
+[ext_resource type="Texture2D" uid="uid://cqghsgd3yafvh" path="res://assets/Adornos/cadencia.png" id="5_orc8j"]
+[ext_resource type="Texture2D" uid="uid://dimd547n1ps8b" path="res://assets/Adornos/velocidad.png" id="7_3isgg"]
+[ext_resource type="Texture2D" uid="uid://bv1562t1fpa0v" path="res://assets/Adornos/velociadabala.png" id="7_4f6gd"]
+
+[node name="MejorasDiosa" type="CanvasLayer" unique_id=548451224 node_paths=PackedStringArray("boton_1", "boton_2", "boton_3", "icono_rect_1", "icono_rect_2", "icono_rect_3", "label_1", "label_2", "label_3")]
+process_mode = 3
+script = ExtResource("1_wlwvp")
+icono_disparo_triple = ExtResource("2_vtrwp")
+icono_vida = ExtResource("5_l2qcu")
+icono_velocidad_mov = ExtResource("7_3isgg")
+icono_cadencia = ExtResource("5_orc8j")
+icono_dano = ExtResource("4_vhke6")
+icono_velocidad_balas = ExtResource("7_4f6gd")
+boton_1 = NodePath("Control/HBoxContainer/TextureButton")
+boton_2 = NodePath("Control/HBoxContainer/TextureButton2")
+boton_3 = NodePath("Control/HBoxContainer/TextureButton3")
+icono_rect_1 = NodePath("Control/HBoxContainer/TextureButton/VBoxContainer/TextureRect")
+icono_rect_2 = NodePath("Control/HBoxContainer/TextureButton2/VBoxContainer/TextureRect")
+icono_rect_3 = NodePath("Control/HBoxContainer/TextureButton3/VBoxContainer/TextureRect")
+label_1 = NodePath("Control/HBoxContainer/TextureButton/VBoxContainer/Label")
+label_2 = NodePath("Control/HBoxContainer/TextureButton2/VBoxContainer/Label")
+label_3 = NodePath("Control/HBoxContainer/TextureButton3/VBoxContainer/Label")
+
+[node name="Control" type="Control" parent="." unique_id=1567790274]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1925213925]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 6.0
+offset_right = 1274.0
+offset_bottom = 723.0
+texture = ExtResource("2_kqs66")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Control" unique_id=583667627]
+layout_mode = 0
+offset_left = 755.0
+offset_top = 50.0
+offset_right = 1242.0
+offset_bottom = 208.0
+theme_override_colors/font_color = Color(0.6575862, 0.60950506, 0, 1)
+theme_override_fonts/font = ExtResource("3_pg246")
+theme_override_font_sizes/font_size = 26
+text = "La diosa Ñusta se te aparece y te bendice. Elige un don para la siguiente plaga:"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=1114841366]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 713.0
+offset_top = 255.0
+offset_right = 1239.0
+offset_bottom = 544.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -17
+
+[node name="TextureButton" type="TextureButton" parent="Control/HBoxContainer" unique_id=712661294]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+texture_normal = ExtResource("3_5vey3")
+texture_pressed = ExtResource("3_5vey3")
+texture_hover = ExtResource("3_5vey3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer/TextureButton" unique_id=1051692988]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer/TextureButton/VBoxContainer" unique_id=1741486364]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_vhke6")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/TextureButton/VBoxContainer" unique_id=153593393]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "+Aumentar Daño
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton3" type="TextureButton" parent="Control/HBoxContainer" unique_id=63882314]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+texture_normal = ExtResource("3_5vey3")
+texture_pressed = ExtResource("3_5vey3")
+texture_hover = ExtResource("3_5vey3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer/TextureButton3" unique_id=649444954]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer/TextureButton3/VBoxContainer" unique_id=1913632018]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("7_3isgg")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/TextureButton3/VBoxContainer" unique_id=1709563821]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "+Velocidad de Movimiento
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureButton2" type="TextureButton" parent="Control/HBoxContainer" unique_id=1306168624]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+texture_normal = ExtResource("3_5vey3")
+texture_pressed = ExtResource("3_5vey3")
+texture_hover = ExtResource("3_5vey3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer/TextureButton2" unique_id=653561316]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer/TextureButton2/VBoxContainer" unique_id=1313176277]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("5_l2qcu")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/TextureButton2/VBoxContainer" unique_id=603134320]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Recuperar Vida"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="Control/HBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/TextureButton2" to="." method="_on_texture_button_2_pressed"]

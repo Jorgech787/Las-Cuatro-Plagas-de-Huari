@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://bkljgeh01phl"]
+
+[ext_resource type="Script" uid="uid://dtnk1ge32nfpt" path="res://pantalla_victoria.gd" id="1_xitq6"]
+[ext_resource type="Texture2D" uid="uid://p56y443ltawu" path="res://assets/SpritesEnemigos/Sprite-0004-removebg-preview.png" id="2_081qx"]
+[ext_resource type="Texture2D" uid="uid://b2o3ay4uv0o0v" path="res://assets/Adornos/VictoriaFondo.jpg" id="2_bjouw"]
+[ext_resource type="FontFile" uid="uid://cpugxlkbaq552" path="res://assets/Fuentes/ka1.ttf" id="3_fa7vr"]
+[ext_resource type="AudioStream" uid="uid://ch8m2i5ohjgn7" path="res://assets/SpritesEnemigos/victory.mp3" id="5_fa7vr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyg4g"]
+atlas = ExtResource("2_081qx")
+region = Rect2(0, 0, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjouw"]
+atlas = ExtResource("2_081qx")
+region = Rect2(88, 0, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa7vr"]
+atlas = ExtResource("2_081qx")
+region = Rect2(176, 0, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jinvv"]
+atlas = ExtResource("2_081qx")
+region = Rect2(264, 0, 88, 88)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wp5od"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyg4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjouw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fa7vr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jinvv")
+}],
+"loop": 1,
+"name": &"celebrar",
+"speed": 4.0
+}]
+
+[node name="PantallaVictoria" type="Control" unique_id=509556198]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xitq6")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=661956682]
+layout_mode = 0
+offset_right = 1276.0
+offset_bottom = 717.0
+texture = ExtResource("2_bjouw")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1071284060]
+layout_mode = 0
+offset_right = 1279.0
+offset_bottom = 717.0
+color = Color(0, 0, 0, 0.49411765)
+
+[node name="Label" type="Label" parent="." unique_id=1167806399]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 85.0
+offset_right = 1158.0
+offset_bottom = 226.0
+theme_override_colors/font_color = Color(0.93333334, 1, 0, 0.9882353)
+theme_override_fonts/font = ExtResource("3_fa7vr")
+theme_override_font_sizes/font_size = 39
+text = "¡VICTORIA! 
+Has derrotado a las Cuatro Plagas y salvado a la Pachamama"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="MensajeLore" type="Label" parent="." unique_id=1423634361]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 290.0
+offset_right = 1130.0
+offset_bottom = 329.0
+theme_override_font_sizes/font_size = 28
+text = "¡Has protegido a tu gente! Los espíritus ancestrales celebran tu victoria"
+
+[node name="BotonReiniciar" type="Button" parent="." unique_id=352759132]
+layout_mode = 0
+offset_left = 309.0
+offset_top = 552.0
+offset_right = 450.0
+offset_bottom = 617.0
+text = "Jugar de nuevo"
+
+[node name="ButtonSalir" type="Button" parent="." unique_id=1755735061]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 556.0
+offset_right = 923.0
+offset_bottom = 612.0
+text = "Salir al Menú"
+
+[node name="KoriVictoria" type="AnimatedSprite2D" parent="." unique_id=509619633]
+position = Vector2(631.00006, 425)
+scale = Vector2(1.625, 1.5681819)
+sprite_frames = SubResource("SpriteFrames_wp5od")
+animation = &"celebrar"
+autoplay = "celebrar"
+frame_progress = 0.7303529
+
+[node name="MusicaVictoria" type="AudioStreamPlayer2D" parent="." unique_id=822117357]
+stream = ExtResource("5_fa7vr")
+bus = &"Musica"
+
+[connection signal="pressed" from="BotonReiniciar" to="." method="_on_boton_reiniciar_pressed"]
+[connection signal="pressed" from="ButtonSalir" to="." method="_on_button_salir_pressed"]

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dqpfynqc0onep"]
+
+[ext_resource type="PackedScene" uid="uid://cyank4ef45wq1" path="res://TransicionNivel.tscn" id="1_4yuom"]
+[ext_resource type="Texture2D" uid="uid://4shn8lgt7km0" path="res://assets/Adornos/Jefe2.jpg" id="2_po5jn"]
+
+[node name="TransicionNivel" unique_id=1729186917 instance=ExtResource("1_4yuom")]
+texto_titulo = "NIVEL 2"
+texto_subtitulo = "La Plaga de las Hormigas"
+escena_destino = "res://Nivel2.tscn"
+
+[node name="FotoJefe" parent="." index="0" unique_id=1346910383]
+offset_bottom = 718.0
+texture = ExtResource("2_po5jn")
+
+[node name="ContenedorTextos" parent="." index="2" unique_id=117732215]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.04296875
+anchor_top = 0.0027777778
+anchor_right = 0.9484375
+anchor_bottom = 0.90416664
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MensajeJefe" parent="ContenedorTextos" index="0" unique_id=1843568736]
+theme_override_font_sizes/font_size = 29
+text = "¡Jamás saldrás vivo de este hormiguero! ¡Yo reino sobre estas dunas!"
+autowrap_mode = 2
+
+[node name="TituloNivel" parent="ContenedorTextos" index="1" unique_id=512441056]
+text = "              NIVEL 2"
+
+[node name="SubtituloPlaga" parent="ContenedorTextos" index="2" unique_id=904116524]
+text = "    La Plaga de las Hormigas"
+horizontal_alignment = 2
+
+[node name="LabelPreparado" parent="ContenedorTextos" index="3" unique_id=882166724]
+text = "             ¡PREPÁRATE!"

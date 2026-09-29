@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://3ebbssnh20b"]
+
+[ext_resource type="FontFile" uid="uid://cpugxlkbaq552" path="res://assets/Fuentes/ka1.ttf" id="1_eksk4"]
+[ext_resource type="Script" uid="uid://ei05vpq8jd0t" path="res://game_over.gd" id="1_xl4ts"]
+[ext_resource type="Texture2D" uid="uid://cf08m411co8f2" path="res://assets/Adornos/FondoDerrota.jpg" id="2_jywu3"]
+[ext_resource type="Texture2D" uid="uid://bvyssurfi0kam" path="res://assets/SpritesEnemigos/Sprite-0007-removebg-preview.png" id="2_xl4ts"]
+[ext_resource type="Texture2D" uid="uid://pbt5smbbhdgj" path="res://assets/SpritesEnemigos/Sprite-0008-removebg-preview.png" id="3_jywu3"]
+[ext_resource type="AudioStream" uid="uid://braaqwn5kh33x" path="res://assets/SpritesEnemigos/lose.mp3" id="6_3y56u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y56u"]
+atlas = ExtResource("2_xl4ts")
+region = Rect2(0, 0, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ua7od"]
+atlas = ExtResource("2_xl4ts")
+region = Rect2(88, 0, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fonj"]
+atlas = ExtResource("2_xl4ts")
+region = Rect2(176, 0, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_758bs"]
+atlas = ExtResource("2_xl4ts")
+region = Rect2(264, 0, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr04i"]
+atlas = ExtResource("3_jywu3")
+region = Rect2(0, 0, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_067b4"]
+atlas = ExtResource("3_jywu3")
+region = Rect2(88, 0, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4h2f"]
+atlas = ExtResource("3_jywu3")
+region = Rect2(176, 0, 88, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5mvm"]
+atlas = ExtResource("3_jywu3")
+region = Rect2(264, 0, 88, 88)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wp5od"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3y56u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ua7od")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fonj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_758bs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr04i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_067b4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4h2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5mvm")
+}],
+"loop": 0,
+"name": &"muerto",
+"speed": 6.0
+}]
+
+[node name="GameOver" type="Control" unique_id=1665099209]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xl4ts")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=217965370]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 721.0
+texture = ExtResource("2_jywu3")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=973361283]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 0.2627451)
+
+[node name="Label" type="Label" parent="." unique_id=701355984]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 139.0
+offset_right = 1014.0
+offset_bottom = 237.0
+theme_override_colors/font_color = Color(1, 0.8784314, 0.4, 1)
+theme_override_fonts/font = ExtResource("1_eksk4")
+theme_override_font_sizes/font_size = 43
+text = "Derrota
+¡HAS CAIDO EN COMBATE!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotonReintentar" type="Button" parent="." unique_id=1710897335]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 558.0
+offset_right = 482.0
+offset_bottom = 617.0
+text = "Jugar de nuevo"
+
+[node name="BotonMenu" type="Button" parent="." unique_id=1777617965]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 554.0
+offset_right = 993.0
+offset_bottom = 610.0
+text = "Menú principal"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1800074352]
+position = Vector2(406, 370)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_wp5od")
+animation = &"muerto"
+frame = 7
+frame_progress = 1.0
+
+[node name="SonidoDerrota" type="AudioStreamPlayer2D" parent="." unique_id=1228252406]
+stream = ExtResource("6_3y56u")
+bus = &"SFX"

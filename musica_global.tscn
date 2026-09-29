@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://10jtqm0iaj7e"]
+
+[ext_resource type="AudioStream" uid="uid://bxs00jeg1anwl" path="res://assets/musicaFondo.mp3" id="1_vohvr"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=1632786238]
+stream = ExtResource("1_vohvr")
+volume_db = 10.0
+autoplay = true
+bus = &"Musica"
